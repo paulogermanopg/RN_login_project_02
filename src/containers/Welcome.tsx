@@ -57,6 +57,7 @@ const Welcome = (props: WelcomeProps) => {
               flex: 1,
               backgroundColor: COLORS.WHITE,
               borderTopLeftRadius: wp(18),
+              width: wp(100),
             }}>
             <Text style={styles.titleLogin}>LOGIN</Text>
 

@@ -25,7 +25,7 @@ const WelcomeButton = (props: WelcomeButtonProps) => {
 
 const styles = StyleSheet.create({
   welcomeButton: {
-    backgroundColor: COLORS.ORANGE,
+    backgroundColor: COLORS.RED_SOFT,
     height: hp(5),
     width: wp(50),
     alignItems: 'center',
