@@ -14,11 +14,13 @@ import {
 } from '../utils/sizeUtils';
 import COLORS from '../utils/colorUtils';
 import WelcomeButton from '../components/WelcomeButton';
+import {useNavigation} from '@react-navigation/native';
 
 interface WelcomeProps {}
 
 const Welcome = (props: WelcomeProps) => {
   const {} = props;
+  const navigtion = useNavigation();
 
   const [startClicked, setStartClicked] = useState<boolean>(false);
   const [buttonFlex, setButtonFlex] = useState<any>(new Animated.Value(1));
@@ -76,7 +78,7 @@ const Welcome = (props: WelcomeProps) => {
             />
             <WelcomeButton
               text="Login"
-              onPress={() => setStartClicked(false)}
+              onPress={() => navigtion.navigate('ContentScreem')}
               style={styles.styleAux}
             />
           </View>
