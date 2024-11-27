@@ -1,20 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {
-  View,
-  Text,
   StyleSheet,
   Animated,
   Easing,
-  TextInput,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import {
   heightPercentToDp as hp,
-  widthPercentToDp as wp,
 } from '../utils/sizeUtils';
 import COLORS from '../utils/colorUtils';
 import WelcomeButton from '../components/DefaultButton';
 import {useNavigation} from '@react-navigation/native';
+import * as S from './styles';
 
 interface WelcomeProps {}
 
@@ -41,37 +37,29 @@ const Welcome = (props: WelcomeProps) => {
         easing: Easing.linear,
       }).start();
     }
-  }, [startClicked]);
+  }, [startClicked, buttonFlex]);
 
   return (
-    <LinearGradient
-      colors={[COLORS.GRADIENT_1, COLORS.GRADIENT_2, COLORS.GRADIENT_3]}
-      style={styles.container}>
-      <View style={styles.topWelcome}>
-        <Text style={styles.logoTextStyle}>Login</Text>
-        <Text style={styles.logoTextStyle}>Project</Text>
-      </View>
+    <S.Gradient
+      colors={[COLORS.GRADIENT_1, COLORS.GRADIENT_2, COLORS.GRADIENT_3]}>
+      <S.TopWelcome>
+        <S.LogoTextStyle>Login</S.LogoTextStyle>
+
+        <S.LogoTextStyle>Project</S.LogoTextStyle>
+      </S.TopWelcome>
 
       <Animated.View style={[styles.buttomWelcome, {flex: buttonFlex}]}>
         {startClicked ? (
-          <View
-            style={{
-              flex: 1,
-              backgroundColor: COLORS.WHITE,
-              borderTopLeftRadius: wp(18),
-              width: wp(100),
-            }}>
-            <Text style={styles.titleLogin}>LOGIN</Text>
+          <S.BodyLogin>
+            <S.TitleLogin>LOGIN</S.TitleLogin>
 
-            <TextInput
-              style={styles.inputStyle}
+            <S.Input
               placeholder="E-mail"
               keyboardType="email-address"
               placeholderTextColor={COLORS.WHITE}
             />
 
-            <TextInput
-              style={styles.inputStyle}
+            <S.Input
               placeholder="Senha"
               secureTextEntry
               placeholderTextColor={COLORS.WHITE}
@@ -81,7 +69,7 @@ const Welcome = (props: WelcomeProps) => {
               onPress={() => navigtion.navigate('ContentScreem')}
               style={styles.styleAux}
             />
-          </View>
+          </S.BodyLogin>
         ) : (
           <WelcomeButton
             text="Comece Agora"
@@ -90,55 +78,17 @@ const Welcome = (props: WelcomeProps) => {
           />
         )}
       </Animated.View>
-    </LinearGradient>
+    </S.Gradient>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  topWelcome: {
-    flex: 2,
-    justifyContent: 'flex-end',
-    paddingVertical: hp(10),
-    alignItems: 'center',
-  },
   buttomWelcome: {
     alignSelf: 'center',
-  },
-  logoTextStyle: {
-    color: COLORS.WHITE,
-    fontSize: wp(12),
-    letterSpacing: wp(4),
-    fontFamily: 'Raleway-Italic-VariableFont_wght',
   },
   styleAux: {
     alignSelf: 'center',
     marginVertical: hp(2),
-  },
-  titleLogin: {
-    alignSelf: 'center',
-    textAlign: 'center',
-    color: COLORS.BLACK,
-    marginVertical: hp(1),
-    fontSize: wp(8),
-    letterSpacing: wp(0.5),
-    fontFamily: 'Raleway-VariableFont_wght',
-  },
-  inputStyle: {
-    borderRadius: wp(8),
-    width: wp(70),
-    height: hp(6),
-    backgroundColor: COLORS.GRADIENT_OPACITY,
-    alignSelf: 'center',
-    textAlign: 'center',
-    marginVertical: hp(2),
-    color: COLORS.BLACK,
-    fontSize: wp(6),
-    letterSpacing: wp(0.5),
-    fontFamily: 'Raleway-VariableFont_wght',
   },
 });
 
