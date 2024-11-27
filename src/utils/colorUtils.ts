@@ -8,6 +8,7 @@ export default {
     ORANGE: '#f48d3c',
     RED_SOFT: '#f3a673',
     GRAY: '#0f0f0f',
+    GRAY_OPACITY: '#0f0f0f80',
     GRADIENT_OPACITY: '#a5b07880',
 };
 

@@ -13,7 +13,7 @@ import {
   widthPercentToDp as wp,
 } from '../utils/sizeUtils';
 import COLORS from '../utils/colorUtils';
-import WelcomeButton from '../components/WelcomeButton';
+import WelcomeButton from '../components/DefaultButton';
 import {useNavigation} from '@react-navigation/native';
 
 interface WelcomeProps {}

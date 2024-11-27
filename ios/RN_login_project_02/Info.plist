@@ -51,6 +51,12 @@
 	<array>
 		<string>Raleway-Italic-VariableFont_wght.ttf</string>
 		<string>Raleway-VariableFont_wght.ttf</string>
+		<string>Parkinsans-Bold.ttf</string>
+		<string>Parkinsans-ExtraBold.ttf</string>
+		<string>Parkinsans-Light.ttf</string>
+		<string>Parkinsans-Medium.ttf</string>
+		<string>Parkinsans-Regular.ttf</string>
+		<string>Parkinsans-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>
